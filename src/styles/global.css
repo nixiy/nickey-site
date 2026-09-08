@@ -61,22 +61,21 @@ h1 span { color: var(--accent); }
 .size-image img { position: relative !important; inset: auto !important; width: 100% !important; height: auto !important; object-fit: contain !important; }
 
 .products { border-top: 1px solid var(--line); }
-.product-visuals { margin-bottom: var(--space-copy-media); }
-.product-visual { width: 100%; margin: 0 !important; }
-.product-visual .product-image__surface { aspect-ratio: 3 / 2; }
-.product-visual img { object-position: center; }
 .product-options { display: grid; grid-template-columns: 1fr 1fr; border-top: 1px solid #f2f1ed; }
-.product-options article { padding: 1.5rem 3rem 0 0; }
-.product-options article + article { padding-left: 3rem; border-left: 1px solid var(--line); }
+.product-options article { min-width: 0; padding: 1.5rem 3rem 0 0; }
+.product-options article + article { padding-right: 0; padding-left: 3rem; border-left: 1px solid var(--line); }
 .product-options .product-type { margin: 0 0 2.5rem; color: var(--muted); font-size: .58rem; letter-spacing: .14em; }
 .product-options h3 { font-size: clamp(2.2rem, 4vw, 4.5rem); font-weight: 300; letter-spacing: -.04em; }
+.product-card-image { width: 100%; margin-top: 2rem !important; }
+.product-card-image .product-image__surface { aspect-ratio: 3 / 2; }
+.product-card-image img { object-position: center; }
 .product-options .product-lead { margin-top: 1.25rem; color: #f2f1ed; font-size: 1.05rem; }
 .product-options .product-note { max-width: 480px; min-height: 3.6em; margin-top: .75rem; color: var(--muted); line-height: 1.8; }
 .product-options a { margin-top: 3rem; padding: 1.1rem 0; display: flex; justify-content: space-between; border-top: 1px solid #f2f1ed; border-bottom: 1px solid #f2f1ed; font-size: .7rem; letter-spacing: .12em; }
 .product-options a:hover, .product-options a:focus-visible { padding-inline: .6rem; background: var(--paper); color: var(--ink); outline: none; }
 
 .specifications { border-top: 1px solid var(--line); }
-.spec-list { width: min(100%, 760px); margin-left: auto; border-top: 1px solid #f2f1ed; }
+.spec-list { width: min(100%, 760px); border-top: 1px solid #f2f1ed; }
 .spec-list div { display: grid; grid-template-columns: 1fr 1.3fr; gap: 2rem; padding: 1rem 0; border-bottom: 1px solid var(--line); }
 .spec-list dt { color: var(--muted); font-size: .7rem; letter-spacing: .08em; }
 .spec-list dd { font-size: .9rem; }
