@@ -89,7 +89,6 @@ h1 span { color: var(--accent); }
   :root { --page: calc(100vw - 32px); --space-section: 5.5rem; --space-label-heading: 2rem; --space-heading-copy: 1.5rem; --space-copy-media: 3rem; }
   .section-pad { padding-inline: 16px; }
   .site-header { height: 62px; }
-  .site-header nav a:not(:nth-child(2)) { display: none; }
   .hero { padding-top: 3rem; }
   .hero-copy { display: block; margin-bottom: 2rem; }
   .eyebrow { margin-bottom: 2.25rem; }
