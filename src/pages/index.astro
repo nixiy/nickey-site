@@ -33,13 +33,21 @@ const specs = [
       <div class="feature-grid">{features.map(([value, label, copy]) => <article><strong>{value}<small>{label}</small></strong><p>{copy}</p></article>)}</div>
     </section>
 
+    <section class="layout-proportion section-pad" aria-labelledby="layout-title">
+      <div class="layout-copy"><p class="kicker">LAYOUT / PROPORTION</p><h2 id="layout-title">小指まで、<br />無理をさせない。</h2><p>整然としたオーソリニア配列に、小指側は2列を確保。</p><strong class="pinky-callout">PINKY <span>2</span> COLUMNS</strong></div>
+      <ProductImage src="images/wireless.jpg" webpSources={[{ src: 'images/wireless-1200.webp', width: 1200 }, { src: 'images/wireless-2200.webp', width: 2200 }]} sizes="(max-width: 768px) 100vw, 58vw" alt="Nickey44Aのキー配列" label="ORTHOLINEAR / TOP VIEW" width={6186} height={3974} class="layout-image" />
+      <div class="proportion-list" aria-label="レイアウトと寸法"><p>ORTHOLINEAR</p><p>17 mm PITCH</p><p>6.5 mm THICKNESS</p><p>221 g</p><p>130.7 × 77.7 mm</p></div>
+    </section>
+
+    <section class="thin-profile" aria-labelledby="thin-title">
+      <div class="thin-copy section-pad"><p class="kicker">THIN PROFILE</p><h2 id="thin-title">リストレストから、<br />解放する。</h2><p>机との段差を抑え、手首を自然な位置へ。</p></div>
+      <div class="thin-visual"><ProductImage src="images/thin-light.jpg" alt="横から見たNickey44Aの薄さ" label="THIN PROFILE / 6.5 MM" width={4096} height={2731} class="thin-image" /><p class="thin-number">6.5 <span>mm</span></p></div>
+    </section>
+
     <section class="gallery section-pad" id="gallery" aria-labelledby="gallery-title">
       <div class="section-heading"><p class="kicker">GALLERY</p><h2 id="gallery-title">Made to be close.</h2></div>
       <div class="gallery-grid">
-        <ProductImage src="images/wireless.jpg" webpSources={[{ src: 'images/wireless-1200.webp', width: 1200 }, { src: 'images/wireless-2200.webp', width: 2200 }]} sizes="(max-width: 768px) 100vw, 62vw" alt="Nickey44Aのトップビュー" label="TOP VIEW" width={6186} height={3974} class="gallery-lead" />
         <ProductImage src="images/A7V09728.JPG" alt="Nickey44Aの薄い側面" label="SIDE PROFILE" width={1800} height={1200} class="gallery-side" />
-        <ProductImage src="images/thin-light.jpg" alt="重ねたNickey44Aの薄さ" label="THIN & LIGHT" width={4096} height={2731} class="gallery-thin" />
-        <ProductImage src="images/aaa-powered.jpg" webpSources={[{ src: 'images/aaa-powered-1200.webp', width: 1200 }, { src: 'images/aaa-powered-2000.webp', width: 2000 }]} sizes="(max-width: 768px) 100vw, 42vw" alt="Nickey44Aの単4電池" label="BATTERY DETAIL" width={3915} height={2317} class="gallery-battery" />
       </div>
     </section>
 
