@@ -192,7 +192,7 @@ h1 span { color: var(--accent); }
   .eyebrow { margin-bottom: 3rem; }
   h1 { font-size: clamp(4.3rem, 22vw, 7rem); line-height: .82; }
   .hero-lead { margin-top: 2.25rem; font-size: 1.05rem; }
-  .hero-media { width: 100vw; margin-left: -16px; aspect-ratio: 7008 / 4589; }
+  .hero-media { width: 100vw; margin-left: -16px; }
   .hero-media img { width: 100%; height: auto; }
   .highlights { grid-template-columns: repeat(2, 1fr); }
   .highlight { min-height: 150px; border-bottom: 1px solid var(--line); }
@@ -269,6 +269,12 @@ h1 span { color: var(--accent); }
   .site-footer { min-height: 360px; display: flex; flex-direction: column; gap: 3rem; }
   .site-footer nav { flex-wrap: wrap; gap: 1.5rem 2rem; }
   .copyright { margin-top: auto; }
+}
+
+@media (max-width: 768px) {
+  .hero { min-height: auto; }
+  .hero-media { width: 100%; height: auto; margin-left: 0; aspect-ratio: auto; }
+  .hero-media img { width: 100%; height: auto; object-fit: contain; display: block; }
 }
 
 @media (prefers-reduced-motion: reduce) {
