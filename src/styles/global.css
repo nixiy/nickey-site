@@ -39,8 +39,9 @@ h1 span { color: var(--accent); }
 .section-heading .kicker { white-space: nowrap; }
 .section-heading h2 { max-width: 760px; }
 .layout-proportion { padding-block: var(--space-section); border-top: 1px solid var(--line); }
-.layout-copy { max-width: 760px; }
-.layout-image { width: min(100%, 1160px); margin: var(--space-copy-media) 0 0 auto !important; }
+.layout-copy { max-width: none; }
+.layout-copy h2 { max-width: 760px; }
+.layout-image { width: min(100%, 1440px); margin: var(--space-copy-media) auto 0 !important; }
 .layout-image figcaption { margin-top: .65rem; color: var(--muted); font-size: .58rem; letter-spacing: .13em; }
 
 .thin-profile { padding-top: var(--space-section); border-top: 1px solid var(--line); }
