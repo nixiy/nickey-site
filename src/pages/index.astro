@@ -2,22 +2,17 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import ProductImage from '../components/ProductImage.astro';
 
-const highlights = [['44', 'KEYS'], ['AAA', 'POWERED'], ['BLE', 'WIRELESS SPLIT'], ['6.5', 'mm THIN']];
-const weightSteps = [
-  { value: '125', label: 'BODY ONLY', src: 'images/weight-body.jpg' },
-  { value: '150', label: 'WITH AAA BATTERIES', src: 'images/weight-battery.jpg' },
-  { value: '193', label: 'WITH SWITCHES', src: 'images/weight-switches.jpg' },
-  { value: '221', label: 'FULLY ASSEMBLED', src: 'images/weight-full.jpg' },
-];
+const highlights = [['44', 'KEYS'], ['AAA', 'POWERED'], ['WIRELESS', 'SPLIT'], ['THIN', '& LIGHT']];
+const weightFacts = [['BODY ONLY', '125 g'], ['+ BATTERIES', '150 g'], ['+ SWITCHES', '193 g'], ['FULLY ASSEMBLED', '221 g']];
 const specs = [
   ['Product', 'Nickey44A'], ['Keys', '44'], ['Layout', 'Ortholinear'], ['Type', 'Split Keyboard'],
   ['Connection', 'Bluetooth'], ['Firmware', 'ZMK'], ['Power', 'AAA battery × 1 / side'],
   ['Width', '130.7 mm'], ['Depth', '77.7 mm'], ['Body thickness', '6.5 mm'],
-  ['Battery section', '13.7 mm'], ['Weight', '221 g / pair, fully assembled'],
+  ['Battery section', '13.7 mm'], ['Weight', 'Approx. 221 g / pair'],
 ];
 const details = [
   ['01', 'LOW PROFILE', '指先と机を、近づける。'],
-  ['02', 'MAGNETIC BODY', '少ない部品で、静かに組み上げる。'],
+  ['02', 'MAGNETIC BODY', 'マグネットで、軽やかに組み上げる。'],
   ['03', 'XIAO nRF52840', '小さな筐体に、無線の自由を。'],
 ];
 ---
@@ -39,7 +34,10 @@ const details = [
         <p class="hero-lead">HHKBの思想を、<br />無線分割キーボードへ。</p>
       </div>
       <figure class="hero-media">
-        <img src={`${import.meta.env.BASE_URL}images/hero.jpg`} width="7008" height="4589" alt="黒いNickey44Aを左右に分けて配置した様子" fetchpriority="high" />
+        <picture>
+          <source type="image/webp" srcset={`${import.meta.env.BASE_URL}images/hero-1400.webp 1400w, ${import.meta.env.BASE_URL}images/hero-2400.webp 2400w`} sizes="100vw" />
+          <img src={`${import.meta.env.BASE_URL}images/hero.jpg`} width="7008" height="4589" alt="黒いNickey44Aを左右に分けて配置した様子" fetchpriority="high" />
+        </picture>
         <figcaption>PROTOTYPE / BLACK</figcaption>
       </figure>
     </section>
@@ -53,19 +51,9 @@ const details = [
       <div><h2 id="concept-title">少ないキーで、<br />無理をしない。</h2><p>必要十分なキー数という思想を、左右分割・無線・ロープロファイルで再構成。指の移動を小さくしながら、日々の入力を自然なまま保つための44キーです。</p></div>
     </section>
 
-    <section class="feature feature--layout section-pad" aria-labelledby="keys-title">
-      <div class="feature-heading reveal">
-        <p class="section-index">02 / LAYOUT</p><p class="feature-kicker">44 KEYS</p>
-        <h2 id="keys-title">44キーという、<br />ちょうどよさ。</h2>
-        <p class="feature-body">整然と並ぶオーソリニア配列と、親指のためのキー。少ないキー数でも、レイヤーを無理なく使えることを目指しました。</p>
-        <ul class="inline-facts" aria-label="レイアウトの特徴"><li>ORTHOLINEAR</li><li>THUMB KEYS</li><li>44 TOTAL</li></ul>
-      </div>
-      <ProductImage src="images/layout.jpg" alt="Nickey44Aのキー配列" label="TOP VIEW / LAYOUT" width={1600} height={1080} class="feature-image reveal" />
-    </section>
-
     <section class="battery-section" aria-labelledby="battery-title">
       <div class="battery-copy section-pad reveal">
-        <p class="section-index section-index--light">03 / POWER</p><p class="feature-kicker">AAA POWERED</p>
+        <p class="section-index section-index--light">02 / POWER</p><p class="feature-kicker">AAA POWERED</p>
         <h2 id="battery-title">充電しない、<br />という選択。</h2>
         <p>左右それぞれ、市販の単4乾電池を1本。充電ケーブルも、LiPoバッテリーも使いません。電池を交換すれば、またすぐに使えます。</p>
       </div>
@@ -75,7 +63,7 @@ const details = [
 
     <section class="wireless section-pad" aria-labelledby="wireless-title">
       <div class="wireless-copy reveal">
-        <p class="section-index">04 / CONNECTION</p><p class="feature-kicker">WIRELESS SPLIT</p>
+        <p class="section-index">03 / CONNECTION</p><p class="feature-kicker">WIRELESS SPLIT</p>
         <h2 id="wireless-title">ケーブルのない、<br />分割キーボード。</h2>
         <p class="feature-body">左右間も、デバイスとの間もワイヤレス。BluetoothとZMK Firmwareで、机の中央まで自由に使えます。</p>
       </div>
@@ -85,7 +73,7 @@ const details = [
 
     <section class="thin-section" aria-labelledby="thin-title">
       <div class="thin-intro section-pad reveal">
-        <div><p class="section-index section-index--light">05 / PROPORTION</p><p class="feature-kicker">THIN &amp; LIGHT</p><h2 id="thin-title">薄く、軽く。</h2></div>
+        <div><p class="section-index section-index--light">04 / PROPORTION</p><p class="feature-kicker">THIN &amp; LIGHT</p><h2 id="thin-title">薄く、軽く。</h2></div>
         <p>ケース本体は6.5 mm。完成状態でも左右合わせて221 g。毎日の道具として、持ち運ぶことも、しまうことも軽やかに。</p>
       </div>
       <div class="thin-photo">
@@ -97,46 +85,50 @@ const details = [
         <div class="mega-spec reveal"><strong>130.7 <span>×</span> 77.7</strong><p>mm / COMPACT<br /><small>WIDTH × DEPTH / EACH SIDE</small></p></div>
         <div class="minor-specs"><p><span>BATTERY SECTION</span><strong>13.7 mm</strong></p><p><span>BODY THICKNESS</span><strong>6.5 mm</strong></p></div>
       </div>
-      <div class="weight-story section-pad" aria-labelledby="weight-title">
-        <div class="weight-heading reveal"><p class="section-index section-index--light">ASSEMBLY / WEIGHT</p><h3 id="weight-title">部品を重ね、<br />完成形へ。</h3></div>
-        <div class="weight-steps">
-          {weightSteps.map((step, index) => <article class="weight-step reveal"><ProductImage src={step.src} alt={`${step.label}の重量`} label={`STEP 0${index + 1}`} width={679} height={453} /><div><span>0{index + 1}</span><p><strong>{step.value}</strong> g</p><small>{step.label}</small></div></article>)}
-        </div>
+      <div class="weight-facts section-pad reveal" aria-label="構成ごとの実測重量">
+        {weightFacts.map(([label, value]) => <p><span>{label}</span><strong>{value}</strong></p>)}
       </div>
     </section>
 
-    <section class="details section-pad" aria-labelledby="details-title">
-      <div class="details-heading reveal"><p class="section-index">06 / DESIGN</p><h2 id="details-title">使うための形。</h2><p>薄いベゼル、低いキー、必要な部分だけに与えた厚み。装飾ではなく、使い方から外形を整えています。</p></div>
-      <ProductImage src="images/detail-main.jpg" alt="Nickey44Aのケースとキーのディテール" label="ENCLOSURE / DETAIL" width={1900} height={1200} class="detail-main reveal" />
-      <div class="detail-list">{details.map(([index, title, copy]) => <article><span>{index}</span><h3>{title}</h3><p>{copy}</p></article>)}</div>
+    <section class="feature feature--layout section-pad" aria-labelledby="keys-title">
+      <div class="feature-heading reveal">
+        <p class="section-index">05 / LAYOUT</p><p class="feature-kicker">44 KEYS</p>
+        <h2 id="keys-title">44キーという、<br />ちょうどよさ。</h2>
+        <p class="feature-body">整然と並ぶオーソリニア配列と、親指のためのキー。少ないキー数でも、レイヤーを無理なく使えることを目指しました。</p>
+        <ul class="inline-facts" aria-label="レイアウトの特徴"><li>ORTHOLINEAR</li><li>THUMB KEYS</li><li>44 TOTAL</li></ul>
+      </div>
+      <ProductImage src="images/layout.jpg" alt="Nickey44Aのキー配列" label="TOP VIEW / LAYOUT" width={1600} height={1080} class="feature-image reveal" />
     </section>
 
-    <section class="gallery section-pad" aria-labelledby="gallery-title">
-      <div class="gallery-heading reveal"><p class="section-index">07 / GALLERY</p><h2 id="gallery-title">Nickey44A,<br />from every angle.</h2></div>
+    <section class="details section-pad" aria-labelledby="details-title">
+      <div class="details-heading reveal"><p class="section-index">06 / DESIGN / DETAILS</p><h2 id="details-title">使うための形。</h2><p>薄いベゼル、低いキー、必要な部分だけに与えた厚み。装飾ではなく、使い方から外形を整えています。</p></div>
+      <ProductImage src="images/detail-main.jpg" alt="Nickey44Aのケースとキーのディテール" label="ENCLOSURE / DETAIL" width={1900} height={1200} class="detail-main reveal" />
+      <div class="detail-list">{details.map(([index, title, copy]) => <article><span>{index}</span><h3>{title}</h3><p>{copy}</p></article>)}</div>
       <div class="gallery-grid">
         <ProductImage src="images/gallery-01.jpg" alt="Nickey44Aの全景" label="01 / OVERVIEW" width={1800} height={1200} class="gallery-a reveal" />
-        <ProductImage src="images/gallery-02.jpg" alt="Nickey44Aの左側詳細" label="02 / LEFT" width={1000} height={1300} class="gallery-b reveal" />
+        <ProductImage src="images/gallery-02.jpg" alt="Nickey44Aのキーとケースの詳細" label="02 / TOP VIEW" width={1000} height={1300} class="gallery-b reveal" />
         <ProductImage src="images/gallery-03.jpg" alt="Nickey44Aの電池部詳細" label="03 / BATTERY" width={1200} height={800} class="gallery-c reveal" />
-        <ProductImage src="images/gallery-04.jpg" alt="Nickey44Aの背面" label="04 / REAR" width={1600} height={900} class="gallery-d reveal" />
-        <ProductImage src="images/gallery-05.jpg" alt="Nickey44Aのキー詳細" label="05 / KEYS" width={900} height={1200} class="gallery-e reveal" />
+        <ProductImage src="images/gallery-04.jpg" alt="Nickey44Aの側面" label="04 / SIDE / PROFILE" width={1600} height={900} class="gallery-d reveal" />
+        <ProductImage src="images/gallery-05.jpg" alt="Nickey44Aの背面とXIAO周辺" label="05 / REAR / DETAIL" width={900} height={1200} class="gallery-e reveal" />
+      </div>
+    </section>
+
+    <section class="products section-pad" id="products" aria-labelledby="products-title">
+      <div class="products-heading reveal"><p class="section-index">07 / PRODUCTS</p><h2 id="products-title">Choose yours.</h2><p>組み立てる時間から楽しむか、完成した一台をすぐに使い始めるか。</p></div>
+      <div class="product-options">
+        <article><span>01</span><p class="status">COMING SOON</p><h3>Build Kit</h3><p>自分の手で仕上げるためのキット。</p><a href="https://potamega.booth.pm/items/8744351" aria-label="Build KitをBOOTHで見る">VIEW ON BOOTH <b>↗</b></a></article>
+        <article><span>02</span><p class="status">COMING SOON</p><h3>Fully Assembled</h3><p>すぐに使い始められる完成品。</p><a href="https://potamega.booth.pm/items/8744204" aria-label="完成品をBOOTHで見る">VIEW ON BOOTH <b>↗</b></a></article>
       </div>
     </section>
 
     <section class="specifications section-pad" id="specs" aria-labelledby="specs-title">
       <div class="specs-heading reveal"><p class="section-index">08 / SPECIFICATIONS</p><h2 id="specs-title">Specifications</h2></div>
       <dl class="spec-list">{specs.map(([term, value]) => <div><dt>{term}</dt><dd>{value}</dd></div>)}</dl>
-    </section>
-
-    <section class="products section-pad" id="products" aria-labelledby="products-title">
-      <div class="products-heading reveal"><p class="section-index">09 / PRODUCTS</p><h2 id="products-title">Choose yours.</h2><p>組み立てる時間から楽しむか、完成した一台をすぐに使い始めるか。</p></div>
-      <div class="product-options">
-        <article><span>01</span><p class="status"></p><h3>Build Kit</h3><p>自分の手で仕上げるためのキット。</p><a href="https://potamega.booth.pm/items/8744351" aria-label="Build KitをBOOTHで見る">VIEW ON BOOTH <b>↗</b></a></article>
-        <article><span>02</span><p class="status"></p><h3>Fully Assembled</h3><p>すぐに使い始められる完成品。</p><a href="https://potamega.booth.pm/items/8744204" aria-label="完成品をBOOTHで見る">VIEW ON BOOTH <b>↗</b></a></article>
-      </div>
+      <p class="spec-note">Weight varies with batteries, switches and keycaps.</p>
     </section>
 
     <section class="documentation section-pad" aria-labelledby="docs-title">
-      <p class="section-index section-index--light">10 / SUPPORT</p>
+      <p class="section-index section-index--light">09 / SUPPORT</p>
       <div class="docs-copy reveal"><h2 id="docs-title">Build it.<br />Make it yours.</h2><p>組み立て、接続、キーマップの変更方法はNickey Docsにまとめています。</p></div>
       <a class="docs-link" href="https://nixiy.github.io/nickey-docs/nickey44a/"><span>BUILD GUIDE<br /><small>NICKEY DOCS</small></span><b>↗</b></a>
     </section>
@@ -144,7 +136,7 @@ const details = [
 
   <footer class="site-footer section-pad">
     <div><a class="footer-mark" href="#top">Nickey44A</a><p>Designed by Potamega</p></div>
-    <nav aria-label="フッターナビゲーション"><a href="#products">BOOTH</a><a href="https://nixiy.github.io/nickey-docs/nickey44a/">DOCS</a><a href="#">GITHUB</a></nav>
+    <nav aria-label="フッターナビゲーション"><a href="#products">BOOTH</a><a href="https://nixiy.github.io/nickey-docs/nickey44a/">DOCS</a><a href="https://github.com/nixiy/nickey-site">GITHUB</a></nav>
     <p class="copyright">© 2026 NICKEY44A</p>
   </footer>
 
