@@ -2,6 +2,8 @@
 
 Nickey44Aの製品紹介ランディングページです。AstroとTypeScriptで構成した静的サイトで、GitHub Pagesへの公開を想定しています。
 
+公開URL: https://nixiy.github.io/nickey-site/
+
 ## ローカル開発
 
 Node.js 22以上を推奨します。
