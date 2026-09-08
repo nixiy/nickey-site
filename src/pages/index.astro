@@ -2,39 +2,31 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import ProductImage from '../components/ProductImage.astro';
 
-const features = [
-  ['44', 'KEYS', 'Ortholinear layout'], ['AAA', 'POWERED', 'One battery per side'],
-  ['BT', 'WIRELESS', 'Bluetooth / ZMK'], ['6.5', 'MM', 'Thin body · 221 g / pair'],
-];
 const specs = [
-  ['Layout', '44-key ortholinear'], ['Connectivity', 'Bluetooth / Wireless'], ['Firmware', 'ZMK'],
-  ['Power', 'AAA battery × 1 / side'], ['Thickness', '6.5 mm'], ['Weight', 'Approx. 221 g / pair'], ['MCU', 'XIAO nRF52840'],
+  ['Layout', '44-key ortholinear'], ['Key pitch', '17 mm'], ['Size', '130.7 × 77.7 mm'],
+  ['Thickness', '6.5 mm'], ['Weight', 'Approx. 221 g / pair'],
+  ['Connectivity', 'Bluetooth / Wireless'], ['Firmware', 'ZMK'], ['Power', 'AAA battery × 1 / side'], ['MCU', 'XIAO nRF52840'],
 ];
 ---
 
 <BaseLayout>
   <header class="site-header">
     <a class="wordmark" href="#top" aria-label="Nickey44A トップへ">Nickey44A</a>
-    <nav aria-label="メインナビゲーション"><a href="#features">Features</a><a href="#gallery">Gallery</a><a href="#products">Buy</a><a href="#specs">Specs</a></nav>
+    <nav aria-label="メインナビゲーション"><a href="#gallery">Gallery</a><a href="#products">Buy</a><a href="#specs">Specs</a></nav>
   </header>
   <main id="top">
     <section class="hero" aria-labelledby="hero-title">
       <div class="hero-copy"><p class="eyebrow">WIRELESS SPLIT KEYBOARD</p><h1 id="hero-title">Nickey<span>44A</span></h1><p class="hero-lead">HHKBの思想を、<br />無線分割キーボードへ。</p><p class="hero-tags">44 KEYS <i>·</i> 単4電池 <i>·</i> WIRELESS <i>·</i> 6.5 MM</p></div>
-      <figure class="hero-media"><picture><source type="image/webp" srcset={`${import.meta.env.BASE_URL}images/hero-1400.webp 1400w, ${import.meta.env.BASE_URL}images/hero-2400.webp 2400w`} sizes="100vw" /><img src={`${import.meta.env.BASE_URL}images/hero.jpg`} width="7008" height="4589" alt="黒いNickey44Aを左右に分けて配置した様子" fetchpriority="high" /></picture></figure>
+      <figure class="hero-media"><picture><source type="image/webp" srcset={`${import.meta.env.BASE_URL}images/hero-charcoal-900.webp 900w, ${import.meta.env.BASE_URL}images/hero-charcoal-1550.webp 1550w`} sizes="100vw" /><img src={`${import.meta.env.BASE_URL}images/hero-charcoal.png`} width="1550" height="1015" alt="黒いNickey44Aを左右に分けて配置した様子" fetchpriority="high" /></picture></figure>
     </section>
 
     <section class="aaa-section" aria-labelledby="aaa-title">
       <div class="aaa-copy section-pad"><p class="kicker">AAA POWERED</p><h2 id="aaa-title">左右それぞれ、<br />単4電池1本。</h2></div>
-      <ProductImage src="images/aaa-powered.jpg" webpSources={[{ src: 'images/aaa-powered-1200.webp', width: 1200 }, { src: 'images/aaa-powered-2000.webp', width: 2000 }]} sizes="100vw" alt="Nickey44Aの単4電池部分" label="AAA BATTERY" width={3915} height={2317} class="aaa-image" />
-    </section>
-
-    <section class="features section-pad" id="features" aria-labelledby="features-title">
-      <div class="section-heading"><p class="kicker">KEY FEATURES</p><h2 id="features-title">Small, by design.</h2></div>
-      <div class="feature-grid">{features.map(([value, label, copy]) => <article><strong>{value}<small>{label}</small></strong><p>{copy}</p></article>)}</div>
+      <ProductImage src="images/aaa-powered-focus.png" webpSources={[{ src: 'images/aaa-powered-focus.webp', width: 1630 }]} sizes="100vw" alt="Nickey44Aの単4電池部分" label="AAA BATTERY" width={1630} height={965} class="aaa-image" />
     </section>
 
     <section class="layout-proportion section-pad" aria-labelledby="layout-title">
-      <div class="layout-copy"><p class="kicker">LAYOUT / PROPORTION</p><h2 id="layout-title">小指まで、<br />無理をさせない。</h2><p>整然としたオーソリニア配列に、小指側は2列を確保。</p><strong class="pinky-callout">PINKY <span>2</span> COLUMNS</strong></div>
+      <div class="layout-copy"><p class="kicker">LAYOUT / PROPORTION</p><h2 id="layout-title">小指まで、<br />無理をさせない。</h2><p>整然としたオーソリニア配列に、小指側は2列を確保。</p></div>
       <ProductImage src="images/wireless.jpg" webpSources={[{ src: 'images/wireless-1200.webp', width: 1200 }, { src: 'images/wireless-2200.webp', width: 2200 }]} sizes="(max-width: 768px) 100vw, 58vw" alt="Nickey44Aのキー配列" label="ORTHOLINEAR / TOP VIEW" width={6186} height={3974} class="layout-image" />
       <div class="proportion-list" aria-label="レイアウトと寸法"><p>ORTHOLINEAR</p><p>17 mm PITCH</p><p>6.5 mm THICKNESS</p><p>221 g</p><p>130.7 × 77.7 mm</p></div>
     </section>
@@ -45,7 +37,7 @@ const specs = [
     </section>
 
     <section class="gallery section-pad" id="gallery" aria-labelledby="gallery-title">
-      <div class="section-heading"><p class="kicker">GALLERY</p><h2 id="gallery-title">Made to be close.</h2></div>
+      <div class="section-heading"><p class="kicker" id="gallery-title">GALLERY</p></div>
       <div class="gallery-grid">
         <ProductImage src="images/A7V09728.JPG" alt="Nickey44Aの薄い側面" label="SIDE PROFILE" width={1800} height={1200} class="gallery-side" />
       </div>
