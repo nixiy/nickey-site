@@ -60,6 +60,12 @@ h1 span { color: var(--accent); }
 .size-image .product-image__surface { aspect-ratio: auto !important; }
 .size-image img { position: relative !important; inset: auto !important; width: 100% !important; height: auto !important; object-fit: contain !important; }
 
+.mjf-premium { padding-top: var(--space-section); border-top: 1px solid var(--line); }
+.mjf-premium-copy { padding-bottom: var(--space-copy-media); }
+.mjf-premium-copy h2 { max-width: 760px; }
+.mjf-premium-image { width: min(100%, 1440px); margin: 0 auto !important; }
+.mjf-premium-image figcaption { margin-left: max(4vw, calc((100vw - 1440px) / 2)); }
+
 .color-variation { padding-top: var(--space-section); border-top: 1px solid var(--line); background: var(--paper); color: var(--ink); }
 .color-variation-copy { padding-bottom: var(--space-copy-media); }
 .color-variation-copy h2 { max-width: 760px; }
@@ -109,6 +115,8 @@ h1 span { color: var(--accent); }
   .layout-image { width: 100vw; margin: var(--space-copy-media) 0 0 calc(50% - 50vw) !important; }
   .layout-image figcaption { margin-left: 16px; }
   .size-image { width: 100vw; margin-left: calc(50% - 50vw) !important; }
+  .mjf-premium-image { width: 100vw; margin-left: calc(50% - 50vw) !important; }
+  .mjf-premium-image figcaption { margin-left: 16px; }
   .clear-variation-image { width: 100vw; margin-left: calc(50% - 50vw) !important; }
   .clear-variation-image figcaption { margin-left: 16px; }
   .thin-number { left: 16px; bottom: 1.5rem; font-size: 7rem; }
